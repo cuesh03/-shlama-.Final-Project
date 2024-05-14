@@ -6,8 +6,10 @@
     <title>Image Text Extractor</title>
 </head>
 <body>
-    <h1>Image Text Extractor</h1>
-
+    <h1> the project of Image Text Extractor</h1>
+<h2> the project of Cloud Computing
+</h2>
+    <h3> the Final project is Development</h3>
     <input type="file" id="fileInput" accept="image/*">
     <button id="extractButton">Extract Text</button>
     <p id="resultText"></p>
@@ -20,6 +22,7 @@
             if (fileInput.files.length > 0) {
                 const file = fileInput.files[0];
                 const formData = new FormData();
+                 const formfile = new FormData();
                 formData.append("image", file);
 
                 fetch("extract-text", {
@@ -27,6 +30,7 @@
                     body: formData,
                 })
                 .then(response => response.text())
+                    . then (repository) ;
                 .then(text => {
                     resultText.textContent = `Text extracted: ${text}`;
                 })
